@@ -16,7 +16,7 @@ export class Analytics {
   }
 
   async track(namespace: string, event: object = {}, opts?: TrackOptions) {
-    // db call to persist this event
+
     let key = `analytics::${namespace}`;
 
     if (!opts?.persist) key += `::${getDate()}`;
