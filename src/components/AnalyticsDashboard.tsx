@@ -10,7 +10,7 @@ interface AnalyticsDashboardProps {
   avgVisitorsPerDay: string;
   amtVisitorsToday: number;
   timeseriesPageviews: Awaited<ReturnType<typeof analytics.retrieveDays>>;
-  topCountries: [string, number][];
+  topCountries?: [string, number][];
 }
 
 const Badge = ({ percentage }: { percentage: number }) => {
@@ -80,7 +80,7 @@ const AnalyticsDashboard = ({
         </Card>
       </div>
 
-      <Card className="flex flex-col sm:grid grid-cols-4 gap-6">
+      {/* <Card className="flex flex-col sm:grid grid-cols-4 gap-6">
         <h2 className="w-full text-dark-tremor-content-strong text-center sm:left-left font-semibold text-xl">
           This weeks top visitors:
         </h2>
@@ -107,7 +107,7 @@ const AnalyticsDashboard = ({
             );
           })}
         </div>
-      </Card>
+      </Card> */}
 
       <Card>
         {timeseriesPageviews ? (
