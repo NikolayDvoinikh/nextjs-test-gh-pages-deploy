@@ -93,5 +93,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Build
+        run: npm run build
         env: 
-            REDIS_KEY: ${{ secrets.REDIS_KEY }}
+          REDIS_KEY: ${{ secrets.REDIS_KEY }}
